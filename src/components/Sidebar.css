@@ -1,0 +1,57 @@
+.sidebar {
+  flex: 0.3;
+  border-right: 1px solid #366880;
+  height: 100vh;
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a4e57;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 999;
+}
+
+.sidebar__chat {
+  cursor: pointer;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.header__icon {
+  display: flex;
+  align-items: center;
+}
+
+.add__icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.signout__icon {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #50606b;
+}
+
+.chat__icon {
+  margin-right: 1rem;
+}
+
+.chat__listItems {
+  color: white !important;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    flex: 1 1;
+    border: none;
+  }
+}

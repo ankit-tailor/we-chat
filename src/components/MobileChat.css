@@ -1,0 +1,97 @@
+.mobile_chatroom {
+  flex: 0.7;
+  height: 100vh;
+  /* overflow-y: scroll; */
+}
+
+.chatroom__header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3a4e57;
+  padding: 0.6rem;
+  z-index: 999;
+}
+
+.chatroom__info {
+  display: flex;
+  align-items: center;
+}
+
+.chatroom__info > p {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.chatroom__messages {
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaMoqGEufKBKbPgyW-aXaUHaa4RkD20bLRurbU5mLYOQONNcVf7Ras-sqq4VzRz0dzRgY&usqp=CAU"); */
+}
+
+.mobile__message__input {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #3a4e57;
+  padding: 0.7rem;
+  width: 100%;
+}
+form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  width: 94%;
+  padding: 0.5rem 1rem;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 20px;
+  margin-right: 5px;
+  color: white;
+  background: transparent;
+}
+
+.send__icon {
+  font-size: 1.7rem !important;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: gray;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile__message__input {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mobile__message__input {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 230px) {
+  .mobile__message__input {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chatroom {
+    display: none;
+  }
+}

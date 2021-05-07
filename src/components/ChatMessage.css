@@ -1,0 +1,35 @@
+.chat-message {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.message {
+  max-width: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  background: #3a4e57;
+  align-self: flex-end;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+.avtar {
+  width: 2rem;
+  height: 2rem;
+}

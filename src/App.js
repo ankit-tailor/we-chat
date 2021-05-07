@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Chatroom from "./components/Chatroom";
+import Sidebar from "./components/Sidebar";
+import SignIn from "./components/SignIn";
+import { projectAuth } from "./firebase/config";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useState } from "react";
+import MobileChat from "./components/MobileChat";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import useLoadChat from "./hooks/useLoadChat";
 
 function App() {
+  const [user] = useAuthState(projectAuth);
+  const [chatId, setChatId] = useState(null);
+  const [chatName, setChatName] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            {user ? (
+              <>
+                <div className="section">
+                  <Sidebar setChatId={setChatId} setChatName={setChatName} />
+                  {chatId && <Chatroom chatId={chatId} chatName={chatName} />}
+                </div>
+              </>
+            ) : (
+              <SignIn />
+            )}
+          </Route>
+          <Route path="/mobilechat" exact>
+            <MobileChat chatId={chatId} chatName={chatName} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
