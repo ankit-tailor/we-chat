@@ -31,6 +31,7 @@
 .add__icon {
   cursor: pointer;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .signout__icon {
@@ -46,7 +47,30 @@
 }
 
 .chat__listItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: white !important;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.chat__listInfo {
+  display: flex;
+  align-items: center;
+}
+
+.link:hover,
+.link:focus,
+.link:acitve {
+  color: inherit;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 600px) {
