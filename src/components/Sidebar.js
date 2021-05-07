@@ -120,28 +120,11 @@ const Sidebar = ({ setChatId, setChatName }) => {
                         src={"" || "/broken-image.jpeg"}
                       />
                       <p>{chat.name}</p>
-                      <React.Fragment>
-                        <Typography
-                          component="span"
-                          variant="body2"
-                          style={{
-                            fontSize: "0.9rem",
-                            color: "#d3d3d3",
-                            fontWeight: 300,
-                          }}
-                        ></Typography>
-                      </React.Fragment>
-                      {/* <p style={{ fontSize: "10px", color: "gray" }}>
-                        {chat.createdAt.toDate().toString().substr(0, 10)}
-                      </p> */}
                     </div>
-                    <DeleteIcon
-                      style={{ cursor: "pointer" }}
-                      onClick={() => {
-                        handelDeleteChat(chat.id, chat.name);
-                      }}
-                    />
                   </div>
+                  <p style={{ fontSize: "10px", color: "gray" }}>
+                    {chat.createdAt.toDate().toString().substr(0, 10)}
+                  </p>
                 </main>
               )}
               <Divider />
