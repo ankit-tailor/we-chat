@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Avatar } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+// import DeleteIcon from "@material-ui/icons/Delete";
 // import EmojiEmotionsOutlinedIcon from "@material-ui/icons/EmojiEmotionsOutlined";
 import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
 import "./MobileChat.css";
@@ -10,7 +10,7 @@ import useLoadChat from "../hooks/useLoadChat";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { Link } from "react-router-dom";
 
-const MobileChat = ({ chatId, chatName }) => {
+const MobileChat = ({ chatId, chatName, setChatId }) => {
   const [sendMessage, setSendMessage] = useState("");
   const { data: allMessages } = useLoadChat("messages", chatId);
   //   console.log(allMessages);
@@ -54,7 +54,6 @@ const MobileChat = ({ chatId, chatName }) => {
           <Avatar src={"" || "/broken-image.jpeg"} />
           <p>{chatName}</p>
         </div>
-        <DeleteIcon />
       </div>
       <div className="chatroom__messages">
         {allMessages &&
