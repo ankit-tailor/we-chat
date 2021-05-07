@@ -8,7 +8,7 @@ import ChatMessage from "./ChatMessage";
 import { projectAuth, projectFirestore, timestamp } from "../firebase/config";
 import useLoadChat from "../hooks/useLoadChat";
 
-const Chatroom = ({ chatId, chatName }) => {
+const Chatroom = ({ chatId, chatName, setChatId }) => {
   const [sendMessage, setSendMessage] = useState("");
   const { data: allMessages } = useLoadChat("messages", chatId);
   // console.log(allMessages);
@@ -42,6 +42,13 @@ const Chatroom = ({ chatId, chatName }) => {
     }
   };
 
+  const handelDeleteChat = () => {
+    if (window.confirm(`Are you sure you want to delete ${chatName}`)) {
+      projectFirestore.collection("messages").doc(chatId).delete();
+      setChatId(null);
+    }
+  };
+
   return (
     <div className="chatroom">
       <div className="chatroom__header">
@@ -49,7 +56,7 @@ const Chatroom = ({ chatId, chatName }) => {
           <Avatar src={"" || "/broken-image.jpeg"} />
           <p>{chatName}</p>
         </div>
-        <DeleteIcon />
+        <DeleteIcon style={{ cursor: "pointer" }} onClick={handelDeleteChat} />
       </div>
       <div className="chatroom__messages">
         {allMessages &&
