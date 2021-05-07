@@ -7,7 +7,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useState } from "react";
 import MobileChat from "./components/MobileChat";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import useLoadChat from "./hooks/useLoadChat";
 
 function App() {
   const [user] = useAuthState(projectAuth);
@@ -23,7 +22,13 @@ function App() {
               <>
                 <div className="section">
                   <Sidebar setChatId={setChatId} setChatName={setChatName} />
-                  {chatId && <Chatroom chatId={chatId} chatName={chatName} />}
+                  {chatId && (
+                    <Chatroom
+                      chatId={chatId}
+                      setChatId={setChatId}
+                      chatName={chatName}
+                    />
+                  )}
                 </div>
               </>
             ) : (
@@ -31,7 +36,11 @@ function App() {
             )}
           </Route>
           <Route path="/mobilechat" exact>
-            <MobileChat chatId={chatId} chatName={chatName} />
+            <MobileChat
+              chatId={chatId}
+              setChatId={setChatId}
+              chatName={chatName}
+            />
           </Route>
         </Switch>
       </Router>
