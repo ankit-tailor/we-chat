@@ -26,3 +26,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13rem;
+}
+
+.sign-in > button {
+  padding: 1rem;
+  font-size: 1rem;
+}
