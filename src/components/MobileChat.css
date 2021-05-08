@@ -1,7 +1,7 @@
 .mobile_chatroom {
   flex: 0.7;
   height: 100vh;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .chatroom__header {
@@ -87,11 +87,5 @@ input {
 @media screen and (max-width: 230px) {
   .mobile__message__input {
     width: 90%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .chatroom {
-    display: none;
   }
 }
