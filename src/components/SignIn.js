@@ -1,5 +1,6 @@
 import React from "react";
 import firebase, { projectAuth } from "../firebase/config";
+import "../App.css";
 
 const SignIn = () => {
   const signInWithGoogle = () => {
@@ -7,14 +8,10 @@ const SignIn = () => {
   };
 
   return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>
-        Sign In with google
-      </button>
-      <p>
-        Do not violate the community guidelines or you will be banned for life!
-      </p>
-    </>
+    <div className="sign-in">
+      <button onClick={signInWithGoogle}>Sign In with google</button>
+      <p>No rules!! Enjoy chatting.</p>
+    </div>
   );
 };
 
