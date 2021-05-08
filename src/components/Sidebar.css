@@ -2,6 +2,8 @@
   flex: 0.3;
   border-right: 1px solid #366880;
   height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .sidebar__header {
@@ -9,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #3a4e57;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -19,8 +21,6 @@
 
 .sidebar__chat {
   cursor: pointer;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .header__icon {
@@ -75,7 +75,10 @@ main {
 
 @media screen and (max-width: 600px) {
   .sidebar {
-    flex: 1 1;
+    flex: 1;
     border: none;
+  }
+  .sidebar__header {
+    position: fixed;
   }
 }
